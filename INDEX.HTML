@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOBILE LEGEND - Premium Accounts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #0a0f2b, #1a1f3c, #2c3e50, #3498db);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .image-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            animation: floatImage 6s ease-in-out infinite;
+        }
+        
+        @keyframes floatImage {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 15px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.5s ease, border-color 0.5s ease;
+        }
+        
+        img:hover {
+            transform: scale(1.02);
+            border-color: #e74c3c;
+        }
+        
+        .title {
+            color: #fff;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 0;
+            border-bottom: 4px solid transparent;
+            width: 100%;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background: rgba(44, 62, 80, 0.7);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            animation: glowTitle 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glowTitle {
+            from {
+                box-shadow: 0 0 20px rgba(231, 76, 60, 0.3), inset 0 0 20px rgba(231, 76, 60, 0.1);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(231, 76, 60, 0.6), inset 0 0 30px rgba(231, 76, 60, 0.2);
+            }
+        }
+        
+        .title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            100% {
+                left: 100%;
+            }
+        }
+        
+        .penawaran {
+            color: #fff;
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(231, 76, 60, 0.85);
+            border-radius: 15px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+            transform: translateY(0);
+            animation: bounce 2s infinite;
+            backdrop-filter: blur(5px);
+        }
+        
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .contact-section {
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transform-style: preserve-3d;
+            animation: rotate3D 20s infinite linear;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes rotate3D {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(37, 211, 102, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .contact-title {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 20px 45px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 50px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+            border-color: white;
+            animation: none;
+        }
+        
+        .whatsapp-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .whatsapp-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .whatsapp-btn:hover::before {
+            left: 100%;
+        }
+        
+        .whatsapp-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            z-index: 1;
+        }
+        
+        .phone-number {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 18px 35px;
+            border-radius: 15px;
+            margin: 20px 0;
+            display: inline-block;
+            border: 2px dashed #25D366;
+            font-weight: bold;
+            position: relative;
+            animation: shake 3s infinite;
+        }
+        
+        @keyframes shake {
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(1deg);
+            }
+            75% {
+                transform: rotate(-1deg);
+            }
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+            color: #555;
+            margin-top: 20px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .note {
+            color: #e74c3c;
+            font-style: italic;
+            margin-top: 15px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+        /* STYLE TABEL YANG DIPERBAIKI */
+        
+        .account-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            animation: tableAppear 1s ease-out;
+        }
+        
+        @keyframes tableAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .account-table thead {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .account-table thead::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: tableShimmer 3s infinite;
+        }
+        
+        @keyframes tableShimmer {
+            100% {
+                left: 100%;
+            }
+        }
+        
+        .account-table th {
+            color: white;
+            padding: 22px 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .account-table th:last-child {
+            border-right: none;
+        }
+        
+        .account-table tbody tr {
+            transition: all 0.3s ease;
+        }
+        
+        .account-table tbody tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .account-table td {
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1.1rem;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .account-table tbody tr:nth-child(even) {
+            background-color: rgba(245, 247, 250, 0.7);
+        }
+        
+        .account-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .account-table td:first-child {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .account-table td:nth-child(5) {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2rem;
+            animation: priceGlow 2s infinite alternate;
+        }
+        
+        @keyframes priceGlow {
+            from {
+                text-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(231, 76, 60, 0.8);
+            }
+        }
+        /* Floating particles in background */
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .account-table {
+                font-size: 0.9rem;
+            }
+            .account-table th,
+            .account-table td {
+                padding: 15px 10px;
+            }
+            .title {
+                font-size: 2rem;
+            }
+            .penawaran {
+                font-size: 1.4rem;
+            }
+            .whatsapp-btn {
+                font-size: 1.2rem;
+                padding: 18px 35px;
+            }
+            .contact-title {
+                font-size: 1.8rem;
+            }
+            .phone-number {
+                font-size: 1.4rem;
+                padding: 15px 25px;
+            }
+            .contact-section {
+                animation: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .account-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            .title {
+                font-size: 1.6rem;
+            }
+            .whatsapp-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            .whatsapp-icon {
+                font-size: 1.5rem;
+                margin-right: 10px;
+            }
+        }
+    </style>
+    <!-- Font Awesome untuk ikon WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Floating particles background -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div class="image-container">
+            <img src="Gambar ML.jpg" alt="Mobile Legend Image">
+        </div>
+
+        <h1 class="title">Jual Akun Mobile Legend</h1>
+
+        <h2 class="penawaran">Akun Yang Tersedia Di Jual 😊</h2>
+
+        <table class="account-table">
+            <thead>
+                <tr>
+                    <th>Nama Akun</th>
+                    <th>Pangkat Tertingi</th>
+                    <th>Pangkat Saat Ini</th>
+                    <th>Total Hero</th>
+                    <th>Total Skin</th>
+                    <th>Harga</th>
+                    <th>Catatan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Phonix.</td>
+                    <td>Honor Bintang 32</td>
+                    <td>Legend5 Bintang 1</td>
+                    <td>52</td>
+                    <td>56</td>
+                    <td>Rp 550.000</td>
+                    <td>Tidak Ada Hero Top Global, Kondisi Masih Ok</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- SECTION KONTAK WHATSAPP -->
+        <div class="contact-section">
+            <h2 class="contact-title">📱 Hubungi Kami via WhatsApp</h2>
+
+            <div class="phone-number">
+                📞 +62 895-1364-0405
+            </div>
+
+            <p class="contact-info">
+                Klik tombol di bawah untuk langsung terhubung dengan kami di WhatsApp.<br> Kami siap membantu Anda 24/7 untuk informasi lebih lanjut tentang akun Mobile Legend.
+            </p>
+
+            <a href="https://wa.me/6289513640405?text=Halo%21%20Saya%20tertarik%20dengan%20akun%20Mobile%20Legend%20yang%20dijual." class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Chat via WhatsApp
+            </a>
+
+            <p class="note">
+                ⚡ Pesan akan langsung terbuka di aplikasi WhatsApp Anda<br> 📝 Jangan lupa sebutkan nama akun yang diminati
+            </p>
+
+            <div style="margin-top: 25px; padding: 15px; background: rgba(240, 248, 255, 0.9); border-radius: 10px; position: relative; z-index: 1;">
+                <p style="color: #2c3e50; font-weight: bold;">🕒 Jam Operasional:</p>
+                <p style="color: #555;">Senin - Minggu: 08.00 - 22.00 WIB</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random size between 2px and 8px
+                const size = Math.random() * 6 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Random position
+                particle.style.left = `${Math.random() * 100}vw`;
+
+                // Random animation duration between 10s and 30s
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+
+                // Random animation delay
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+
+                particlesContainer.appendChild(particle);
+            }
+
+            // Add hover effect to table rows
+            const tableRows = document.querySelectorAll('.account-table tbody tr');
+            tableRows.forEach(row => {
+                row.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+
+                row.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+
+            // Add click animation to WhatsApp button
+            const whatsappBtn = document.querySelector('.whatsapp-btn');
+            whatsappBtn.addEventListener('click', function(e) {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                ripple.style.width = `${size}px`;
+                ripple.style.height = `${size}px`;
+                ripple.style.top = `${y}px`;
+                ripple.style.left = `${x}px`;
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+
+                this.appendChild(ripple);
+
+                // Remove ripple after animation
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+
+            // Add CSS for ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+
+</html>
